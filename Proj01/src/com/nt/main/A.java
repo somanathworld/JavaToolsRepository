@@ -7,6 +7,7 @@ public class A {
 		System.out.println("A.main()");
 		System.out.println("A.main()");
 		System.out.println("A.main() 0933");
+		System.out.println("A.main() created");
 	}
 
 }
