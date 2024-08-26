@@ -8,7 +8,7 @@ public class A1 {
 		System.out.println("A1.main() 002");
 		System.out.println("A1.main() 0011");
 		System.out.println("A1.main() 0012");
-		
+		System.out.println("A1.main() 0021");
 	}
 
 }
