@@ -10,6 +10,7 @@ public class A1 {
 		System.out.println("A1.main() 0012");
 		System.out.println("A1.main() 0021");
 		System.out.println("A1.main() 0022");
+		System.out.println("A1.main() 0013");
 	}
 
 }
