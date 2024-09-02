@@ -2,7 +2,6 @@ package com.nt.interceptors;
 
 import java.time.LocalTime;
 
-
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import jakarta.servlet.RequestDispatcher;
@@ -32,8 +31,6 @@ public class TimeCheckingInterceptor implements HandlerInterceptor {
 			return false;
 		}else {
 			return true;
-		}
-		
-			
+		}			
 	}
 }
