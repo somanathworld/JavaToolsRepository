@@ -4,69 +4,87 @@ public class EmployeeDTO {
 
 	private int serialNo;
 	private int empNo;
-	private String ename;
+	private String eName;
 	private String job;
-	private float sal;
+	private float salary;
 	private int deptNo;
-	private float grossSalary;
-	private float netSalary;
+	private double grossSalary;
+	private double netSalary;
 	
 	public EmployeeDTO() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public int getSerialNo() {
 		return serialNo;
 	}
+
 	public void setSerialNo(int serialNo) {
 		this.serialNo = serialNo;
 	}
+
 	public int getEmpNo() {
 		return empNo;
 	}
+
 	public void setEmpNo(int empNo) {
 		this.empNo = empNo;
 	}
-	public String getEname() {
-		return ename;
+
+	public String geteName() {
+		return eName;
 	}
-	public void setEname(String ename) {
-		this.ename = ename;
+
+	public void seteName(String eName) {
+		this.eName = eName;
 	}
+
 	public String getJob() {
 		return job;
 	}
+
 	public void setJob(String job) {
 		this.job = job;
 	}
-	public float getSal() {
-		return sal;
+
+	public float getSalary() {
+		return salary;
 	}
-	public void setSal(float sal) {
-		this.sal = sal;
+
+	public void setSalary(float salary) {
+		this.salary = salary;
 	}
+
 	public int getDeptNo() {
 		return deptNo;
 	}
+
 	public void setDeptNo(int deptNo) {
 		this.deptNo = deptNo;
 	}
-	public float getGrossSalary() {
+
+	public double getGrossSalary() {
 		return grossSalary;
 	}
-	public void setGrossSalary(float grossSalary) {
+
+	public void setGrossSalary(double grossSalary) {
 		this.grossSalary = grossSalary;
 	}
-	public float getNetSalary() {
+
+	public double getNetSalary() {
 		return netSalary;
 	}
-	public void setNetSalary(float netSalary) {
+
+	public void setNetSalary(double netSalary) {
 		this.netSalary = netSalary;
 	}
+
 	@Override
 	public String toString() {
-		return "EmployeeDTO [serialNo=" + serialNo + ", empNo=" + empNo + ", ename=" + ename + ", job=" + job + ", sal="
-				+ sal + ", deptNo=" + deptNo + ", grossSalary=" + grossSalary + ", netSalary=" + netSalary + "]";
-	}	
+		return "EmployeeDTO [serialNo=" + serialNo + ", empNo=" + empNo + ", eName=" + eName + ", job=" + job
+				+ ", salary=" + salary + ", deptNo=" + deptNo + ", grossSalary=" + grossSalary + ", netSalary="
+				+ netSalary + "]";
+	}
 	
+
 }
