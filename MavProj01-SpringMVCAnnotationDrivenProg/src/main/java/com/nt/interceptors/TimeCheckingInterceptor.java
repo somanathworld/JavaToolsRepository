@@ -24,7 +24,7 @@ public class TimeCheckingInterceptor implements HandlerInterceptor {
 
 		time = LocalTime.now().getHour();
 		
-		if(time < 14 || time > 18) {
+		if(time < 9 || time > 18) {
 			System.out.println("TimeCheckingInterceptor.preHandle()");
 			rd = request.getRequestDispatcher("/timeout.jsp");
 			rd.forward(request, response);

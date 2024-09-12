@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.nt.dto.EmployeeDTO;
 
-public interface EmployeeService {
+public interface IEmployeeService {
 
 	public String registerEmployee();
-	public List<EmployeeDTO> getEmployee();
+	public List<EmployeeDTO> getEmployees();
 }
