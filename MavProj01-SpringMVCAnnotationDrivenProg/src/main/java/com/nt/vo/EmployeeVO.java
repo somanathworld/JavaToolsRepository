@@ -1,13 +1,14 @@
-package com.nt.bo;
+package com.nt.vo;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class EmployeeBO {
-
+public class EmployeeVO {
+	
 	private int empNo;
 	private String eName;
 	private String job;
@@ -16,13 +17,12 @@ public class EmployeeBO {
 	private String addrs;
 	private long mobNo;
 	private String gender;
-	private String hobbies;
-	private String qualification;
+	private String[] hobbies;
+	private List<String> qualification;
 	private LocalDate dob;
 	private LocalDate doj;
-	private String resumePath;
-	private String photoPath;
-	
+	private MultipartFile resume;
+	private MultipartFile photo;
 	public int getEmpNo() {
 		return empNo;
 	}
@@ -71,16 +71,16 @@ public class EmployeeBO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getHobbies() {
+	public String[] getHobbies() {
 		return hobbies;
 	}
-	public void setHobbies(String hobbies) {
+	public void setHobbies(String[] hobbies) {
 		this.hobbies = hobbies;
 	}
-	public String getQualification() {
+	public List<String> getQualification() {
 		return qualification;
 	}
-	public void setQualification(String qualification) {
+	public void setQualification(List<String> qualification) {
 		this.qualification = qualification;
 	}
 	public LocalDate getDob() {
@@ -95,25 +95,25 @@ public class EmployeeBO {
 	public void setDoj(LocalDate doj) {
 		this.doj = doj;
 	}
-	public String getResumePath() {
-		return resumePath;
+	public MultipartFile getResume() {
+		return resume;
 	}
-	public void setResumePath(String resumePath) {
-		this.resumePath = resumePath;
+	public void setResume(MultipartFile resume) {
+		this.resume = resume;
 	}
-	public String getPhotoPath() {
-		return photoPath;
+	public MultipartFile getPhoto() {
+		return photo;
 	}
-	public void setPhotoPath(String photoPath) {
-		this.photoPath = photoPath;
+	public void setPhoto(MultipartFile photo) {
+		this.photo = photo;
 	}
 	
 	@Override
 	public String toString() {
-		return "EmployeeBO [empNo=" + empNo + ", eName=" + eName + ", job=" + job + ", salary=" + salary + ", deptNo="
+		return "EmployeeVO [empNo=" + empNo + ", eName=" + eName + ", job=" + job + ", salary=" + salary + ", deptNo="
 				+ deptNo + ", addrs=" + addrs + ", mobNo=" + mobNo + ", gender=" + gender + ", hobbies="
-				+ hobbies + ", qualification=" + qualification + ", dob=" + dob + ", doj=" + doj
-				+ ", resumePath=" + resumePath + ", photoPath=" + photoPath + "]";
+				+ Arrays.toString(hobbies) + ", qualification=" + qualification + ", dob=" + dob + ", doj=" + doj
+				+ ", resume=" + resume + ", photo=" + photo + "]";
 	}
 
 }

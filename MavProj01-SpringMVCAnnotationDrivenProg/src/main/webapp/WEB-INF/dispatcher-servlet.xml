@@ -17,6 +17,8 @@
 		
 	<context:component-scan base-package="com.nt"/>
 	
+	<bean id = "multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+
 <mvc:interceptors>
 	<bean class = "com.nt.interceptors.TimeCheckingInterceptor"/>
 </mvc:interceptors>
