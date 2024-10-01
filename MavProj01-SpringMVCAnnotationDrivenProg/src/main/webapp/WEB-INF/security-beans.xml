@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd ">
+
+	<!-- <security:http auto-config="true"> Specify Access restrictions on the 
+		URLS <security:intercept-url pattern="/**" access="permitAll" /> <security:intercept-url 
+		pattern="/countries" access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')" /> 
+		Enable Basic logic <security:http-basic /> </security:http> <security:authentication-manager> 
+		Taking current Spring bean configuration file itself as authentication info 
+		provider <security:authentication-provider> <security:user-service> <security:user 
+		name="raja" password="{noop}rani" authorities="ROLE_MANAGER" /> <security:user 
+		name="rajesh" password="{noop}hyd" authorities="ROLE_ADMIN" /> <security:user 
+		name="karan" password="{noop}kiran" authorities="ROLE_CUSTOMER" /> <security:user 
+		name="lokesh" password="{noop}delhi" authorities="ROLE_VISITOR" /> </security:user-service> 
+		</security:authentication-provider> </security:authentication-manager> -->
+
+	<security:http request-matcher="ant">
+		<security:intercept-url pattern="/"
+			access="permitAll" />
+		<security:intercept-url pattern="/logout.jsp"
+			access="permitAll" />
+		<security:intercept-url pattern="/register_emp"
+			access="hasRole('ROLE_USER')" />
+		<security:intercept-url
+			pattern="/showAllEmployees" access="hasRole('ROLE_SUPERVISOR')" />
+
+		<security:jee mappable-roles="ROLE_USER,ROLE_SUPERVISOR" />
+
+		<security:logout />
+		<security:form-login />
+
+	</security:http>
+
+	<bean id="bcrypt"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+
+			<security:user-service properties="classpath:com/nt/commons/info.properties"/>
+
+			<!-- <security:password-encoder ref="bcrypt"/> <security:jdbc-user-service 
+				data-source-ref="jofb" users-by-username-query="SELECT UNAME, PWD, STATUS 
+				FROM USERS WHERE UNAME=?" authorities-by-username-query="SELECT UNAME, ROLE 
+				FROM ROLES WHERE UNAME=?" /> -->
+
+<!-- 
+			<security:user-service>
+				<security:user name="raja" password="{noop}raja"
+					authorities="ROLE_USER" />
+				<security:user name="rani" password="{noop}rani"
+					authorities="ROLE_SUPERVISOR" />
+			</security:user-service>
+ -->
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>
